@@ -6,16 +6,17 @@ class PlantsController < ApplicationController
     end
     
 
-  def show
+     def show
     # params[:id] refers to the dynamic part of our route, defined by :id
     
         plant = Plant.find_by(id: params[:id])
         render json: plant
-  end
-  def create
-    plant = Plant.create(plant_params)
-    render json: plant, status: :created
-   end 
+    end
+
+    def create
+        plant = Plant.create(plant_params)
+        render json: plant, status: :created
+    end 
   # other controller actions here
 
   private
